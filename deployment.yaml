@@ -20,13 +20,13 @@ spec:
       containers:
         - name: jenkins
           image: jenkins/jenkins:lts
-          resources:
-            limits:
-              memory: "2Gi"
-              cpu: "1000m"
-            requests:
-              memory: "500Mi"
-              cpu: "500m"
+            #resources:
+            #limits:
+            #  memory: "2Gi"
+            #  cpu: "1000m"
+            #requests:
+            #  memory: "500Mi"
+            #  cpu: "500m"
           ports:
             - name: httpport
               containerPort: 8080
@@ -53,5 +53,6 @@ spec:
               mountPath: /var/jenkins_home         
       volumes:
         - name: jenkins-data
-          persistentVolumeClaim:
-              claimName: jenkins-pv-claim
+          emptyDir: {}
+          #persistentVolumeClaim:
+          #    claimName: jenkins-pv-claim

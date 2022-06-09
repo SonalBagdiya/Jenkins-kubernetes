@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jenkins-pv-volume
+  namespace: jenkins
+  labels:
+    usage: jenkins-shared-deployement
+spec:
+  storageClassName:  default # managed-premium
+  capacity:
+    storage: 5Gi # Change<F4><F4><F4> Me
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/var/jenkins_home"

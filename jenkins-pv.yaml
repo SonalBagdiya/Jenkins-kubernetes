@@ -6,11 +6,20 @@ metadata:
   labels:
     usage: jenkins-shared-deployement
 spec:
-  storageClassName:  default # managed-premium
+  storageClassName: standard # managed-premium
   capacity:
     storage: 5Gi # Change<F4><F4><F4> Me
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: pvc-demo
+  gcePersistentDisk:
+    fsType: ext4
+    pdName: gke-cluster-1-default-pool-5895d0eb-6pgl
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  volumeMode: Filesystem
   hostPath:
     path: "/var/jenkins_home"

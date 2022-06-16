@@ -56,8 +56,4 @@ spec:
         - name: jenkins-data
           #emptyDir: {}
           persistentVolumeClaim:
-            claimName: pvc-demo #jenkins-pvc-claim
-            # pdName: data-vol
-            # fsType: ext4
-              #pdName: persistentVolumeClaim:
-          #    claimName: jenkins-pv-claim
+            claimName: jenkins-pv-claim

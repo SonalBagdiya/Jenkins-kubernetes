@@ -12,9 +12,9 @@ spec:
   claimRef:
     apiVersion: v1
     kind: PersistentVolumeClaim
-    name: pvc-demo #jenkins-pvc-claim
+    name: jenkins-pv-claim
     namespace: jenkins
   gcePersistentDisk:
     fsType: ext4
-    pdName: data-vol #gke-jenkins-cluster-default-pool-5a13b2fd-d2s5
+    pdName: data-vol
   persistentVolumeReclaimPolicy: Delete

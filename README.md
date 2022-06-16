@@ -1,3 +1,5 @@
 # Kubernetes Manifests for Jenkins Deployment
 
-Refer https://devopscube.com/setup-jenkins-on-kubernetes-cluster/ for step by step process to use these manifests.
+ # Create service account, persistent volume and secrets.
+ # Create role binding
+ # Run deployment and service manifest to scale up Jenkins master pods

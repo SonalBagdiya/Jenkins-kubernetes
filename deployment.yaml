@@ -17,6 +17,8 @@ spec:
             fsGroup: 1000 
             runAsUser: 1000
       serviceAccountName: jenkins-cluster-admin
+     # nodeSelector:
+     #    iam.gke.io/gke-metadata-server-enabled: "true"
       containers:
         - name: jenkins
           image: jenkins/jenkins:lts
